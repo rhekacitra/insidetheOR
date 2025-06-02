@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script src="index.js" type="module" defer></script>
+
+    <title>Inside the OR</title>
+</head>
+<body>
+    <div id="choose-case">
+        <h1>Choose a Case</h1>
+        <select id="caseDropdown">
+        <option disabled selected>Select a patient case</option>
+        </select>
+    </div>
+
+
+    <div class="layout-wrapper">
+        <div id="case-and-body">
+            
+            <div id="case-section">
+                <div id="ekg-monitor">
+                    <img id="ekg-monitor" src="images/ekg.png" alt="ekg" />
+                </div>
+                <div id="or-container">
+                <div class="zoom-area">
+                    <img id="or-image" src="images/table-female.png" alt="Patient in OR" />
+                </div>
+                <div id="tooltip" class="tooltip"></div>
+                </div>
+            
+                <div id="surgeryInfo" class="info-card"> Surgical Information here.
+                </div>
+            </div>
+
+
+            <div id="body-wrapper">
+                <div id="body-section">
+                <!-- <div class="body-container" id="clickable-body">
+                    <img src="images/body-2.png" id="bodyImage" alt="Body Diagram">
+                </div> -->
+                </div>
+            
+                <!-- Right side: zone controls + info -->
+                <!-- <div id="side-panel">
+
+                    <div class="body-hover-container">
+                        <img src="images/body-2.png" alt="Body" id="bodyImageHover" />
+                        <div class="hover-zone" id="zone-brain" title="Brain"></div>
+                        <div class="hover-zone" id="zone-heart" title="Heart"></div>  
+                        <div class="hover-zone" id="zone-lungs" title="Lungs"></div>                  
+                        <div class="hover-zone" id="zone-abdomen" title="Abdomen"></div>
+                    </div>
+
+                        <div id="body-zones">
+                            <button class="zone-btn" data-zone="brain">🧠<br>Brain</button>
+                            <button class="zone-btn" data-zone="heart">❤️<br>Heart</button>
+                            <button class="zone-btn" data-zone="lungs">🫁<br>Lungs</button>
+                            <button class="zone-btn" data-zone="abdomen">🍽️<br>Abdomen</button>
+                        </div>
+                    
+                        <div id="zone-info">
+                            Body zone information here.
+                        </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="container">
+            <div id="ekg-border">
+            <div id="charts-wrapper">
+        
+                <div id="upper-controls">
+                <div id="case-selector">
+                    <label for="case-select">Select Case ID:</label>
+                    <select id="case-select">
+                    </select>
+                </div>
+                <input type="range" id="time-slider" min="0" max="0" step="1" value="0" />
+                </div>
+        
+                <div id="vital-chart"></div>
+        
+                <div id="intervention-chart"></div>
+            </div>
+        
+            <div id="sidebar">
+                <button id="play-btn">▶️ Play</button>
+                <button id="pause-btn" disabled>⏸ Pause</button>
+        
+                <div id="legend"></div>
+                <div id="live-values"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="post-op">
+        <h2>Post-Operative Outcome</h2>
+        <div class="gif-container">
+          <img src="images/recovered-female-new.gif" id="postOpGif" alt="Patient in Post-Op" class="clickable-gif" />
+          <p class="gif-instruction">Click the patient to reveal discharge summary</p>
+        </div>
+        <div id="dischargeSummary" class="summary-box hidden"></div>
+      </div>
+       -->
+    
+    <div class="post-op" id="post-op-section">
+    <h2>Post-Operative Outcome</h2>
+    
+    <div class="post-op-container">
+        <div class="gif-column">
+        <img src="images/recovered-female-new.gif" id="postOpGif" alt="Patient in Post-Op" class="clickable-gif" />
+        <div id="outcome-text" class="outcome-text"></div>
+        <p class="gif-instruction">Click the patient to reveal discharge summary</p>
+
+        </div>
+    
+        <div id="dischargeSummary" class="summary-box hidden">
+        </div>
+    </div>
+    </div>
+    
+      
+      
+</body>
+</html>
