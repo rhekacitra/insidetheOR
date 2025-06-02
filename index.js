@@ -15,7 +15,7 @@ const bodyZones = document.getElementById("body-zones");
 // zoneInfo.style.display = "none";
 
 async function loadData() {
-  const res = await fetch("patient.json");
+  const res = await fetch(`patient.json?nocache=${Date.now()}`);
   caseData = await res.json();
   populateDropdown(caseData);
 }
